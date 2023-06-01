@@ -1,14 +1,17 @@
 <script>
 import {words} from './static_data/words'
 import GameDataForm from './components/GameDataForm.vue';
+import CharacterCard from './components/CharacterCard.vue';
+
 export default{
   components : {
-    GameDataForm
+    GameDataForm,
+    CharacterCard
   },
   data(){
     return {
       words,
-      gameStep : 0,
+      gameStep : false,
       gameData : {
         playerCount : null,
         spyCount : null,
@@ -41,7 +44,7 @@ export default{
           tempMessageList[Math.floor(Math.random()*tempMessageList.length)] = "****"
         }
         this.gameData.messageList = tempMessageList
-        this.gameStep = 1
+        this.gameStep = true
       }
     }
   }
@@ -49,5 +52,9 @@ export default{
 </script>
 
 <template>
-  <GameDataForm :setGameData="setGameData"/>
+  <div class="container mx-auto">
+    <CharacterCard v-if="Boolean(gameStep)"  :messageList="gameData.messageList"/>
+    <GameDataForm v-else="Boolean(gameStep)" :setGameData="setGameData"/>
+    
+  </div>
 </template>

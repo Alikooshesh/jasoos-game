@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-full max-w-[85vw] mx-auto">
+    <div class="w-full">
         <div class="flex flex-col gap-[16px]">
             <div class="flex flex-col gap-[8px]">
                 <label>تعداد بازیکن</label>
