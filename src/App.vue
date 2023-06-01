@@ -52,7 +52,7 @@ export default{
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto py-[24px]">
     <CharacterCard v-if="Boolean(gameStep)"  :messageList="gameData.messageList"/>
     <GameDataForm v-else="Boolean(gameStep)" :setGameData="setGameData"/>
     
